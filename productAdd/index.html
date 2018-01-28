@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Product Add</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<!--Hosted js library: jquery 3.2.1-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--js script for "type switcher"-->
+<script src="/product/js/typeSwitcher.js"></script>
+</head>
+
+<body>
+<a href="../productList/index.php">list</a>
+<!--Form for creating new product-->
+<form action="../includes/actionPage.php" method="POST">
+<!--Header-->
+<div id="header">
+  <div class="left">
+    <h1>Product Add</h1>
+  </div>
+  <div class="right">
+    <button type="submit">Save</button>
+  </div>
+</div>
+<!--Main/middle content area-->
+<div id="content">
+  <div id="form">
+    <br>
+    <br>
+    <div>
+      <label>SKU</label> 
+      <input type="text" name="sku">
+    </div>
+    <div>
+      <label>Name</label> 
+      <input type="text" name="name">
+    </div>
+    <div>
+      <label>Price</label>
+      <input type="text" name="price">
+    </div>
+    <br>
+    <div>
+      <label>Type switcher</label>
+      <select id="typeSwitcher" name="type">
+        <option value="dvd">DVD</option>
+        <option value="book">Book</option>
+        <option value="furniture">Furniture</option>
+      </select>
+    </div>
+    <br>
+    <div id="dvd">
+      <p> Please provide size in megabytes</p>
+      <label>Size</label>
+      <input type="text" name="size">
+    </div>
+
+    <div id="book" class="hidden">
+      <p> Please provide weight in kilograms</p>
+      <label>Weight</label>
+      <input type="text" name="weight">
+    </div>
+
+    <div id="furniture" class="hidden">
+      <p> Please provide dimensions in milimeters</p>
+      <div>
+        <label>Height</label>
+        <input type="text" name="height">
+      </div>
+      <div>
+        <label>Width</label>
+        <input type="text" name="width">
+      </div>
+      <div>
+        <label>Length</label>
+        <input type="text" name="length">
+      </div>
+    </div> 
+  </div>
+</div>  
+</form>
+
+</body>
+</html>

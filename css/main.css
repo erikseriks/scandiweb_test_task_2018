@@ -1,0 +1,87 @@
+body{
+	text-align: center;
+	font-family: sans-serif;
+}
+
+p{
+	text-align: center;
+	padding: 5px;
+	font-size: 12px;
+}
+
+form{
+	text-align: left;
+}
+
+label{
+	margin-right: 10px;
+	font-size: 16px;	
+	float: left;
+	width: 100px;
+	vertical-align: middle;
+}
+
+button[type="submit"]{
+	float: right;
+	padding: 10px;
+	width: 80px;
+}
+
+input[type="text"]{
+	width: 300px;
+	margin-bottom: 12px;
+}
+
+#header{
+	clear: both;
+	height: 80px;
+	border-bottom: 2px solid black;
+}
+
+#content{
+	clear: both;
+	padding-left: 20px;
+	padding-right: 40px;
+	text-align: center;
+}
+
+#form{
+	display: inline-block;
+	text-align: left;
+}
+
+.left{
+	float: left;
+	width: 250px;
+	margin-left: 10px;
+}
+
+.right{
+	float: right;
+	margin-right: 130px;
+	padding: 20px;
+	width: 200px;
+}
+
+.product{
+	display: inline-block;
+	float: left;
+	width: 260px;
+	min-height: 200px;
+	margin-left: 25px;
+	margin-top: 30px;
+	border: 2px solid lightgray;
+	padding: 6px;
+	border-radius: 8px;
+	text-align: center;
+	line-height:2em;
+	overflow: hidden;
+}
+
+.checkbox{
+	text-align: left;
+}
+
+.hidden{
+	display:none;
+}
