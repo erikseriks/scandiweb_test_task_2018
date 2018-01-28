@@ -1,8 +1,8 @@
 <?php
 //Set encoding to utf8.
-include("/opt/lampp/htdocs/product/includes/encoding.php");
+include("./encoding.php");
 //Parent class for all products.
-require_once("/opt/lampp/htdocs/product/includes/product.php");
+require_once("./product.php");
 
 class book extends product
 {

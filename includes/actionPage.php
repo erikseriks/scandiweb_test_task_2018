@@ -1,6 +1,6 @@
 <?php
 //Set encoding to utf8.
-include("/opt/lampp/htdocs/product/includes/encoding.php");
+include("encoding.php");
 
 //Check if POST values are set.
 

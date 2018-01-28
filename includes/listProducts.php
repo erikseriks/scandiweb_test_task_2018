@@ -1,6 +1,6 @@
 <?php
 //Set encoding to utf8.
-include("/opt/lampp/htdocs/product/includes/encoding.php");
+include("encoding.php");
 //Class used for geting and returning an array of all products in database.
 require_once("getProducts.php");
 

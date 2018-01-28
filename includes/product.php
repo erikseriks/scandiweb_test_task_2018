@@ -1,6 +1,6 @@
 <?php
 //Set encoding to utf8.
-include("/opt/lampp/htdocs/product/includes/encoding.php");
+include("encoding.php");
 //Class for connecting to MySQL database.
 include_once("dbConnect.php");
 

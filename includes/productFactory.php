@@ -1,6 +1,6 @@
 <?php
 //Set encoding to utf8.
-include("/opt/lampp/htdocs/product/includes/encoding.php");
+include("encoding.php");
 //product child classes are stored in "includes/products" directory.
 
 //Class used for instantiating the right product type.
