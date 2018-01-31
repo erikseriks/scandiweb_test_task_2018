@@ -20,7 +20,7 @@
     <h1>Product List</h1>
   </div>
   <div class="right">
-    <button id="deleteSku" type="submit" name="deleteSku" disabled="true">Delete</button>
+    <button id="deleteSku" type="submit" name="deleteSku">Delete</button>
   </div>
 </div>
 <br>
