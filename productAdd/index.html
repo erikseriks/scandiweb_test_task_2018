@@ -7,13 +7,15 @@
 <!--Hosted js library: jquery 3.2.1-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!--js script for "type switcher"-->
-<script src="/product/js/typeSwitcher.js"></script>
+<script type="application/javascript" src="../js/typeSwitcher.js"></script>
+<!--js script for "productAddForm" submit action-->
+<script type="application/javascript" src="../js/newProductAJAX.js"></script>
 </head>
 
 <body>
 <a href="../productList/index.php">list</a>
 <!--Form for creating new product-->
-<form action="../includes/actionPage.php" method="POST">
+<form id="productAddForm" action="../includes/actionPage.php" method="POST">
 <!--Header-->
 <div id="header">
   <div class="left">

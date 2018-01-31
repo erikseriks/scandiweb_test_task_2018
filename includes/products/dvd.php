@@ -17,9 +17,7 @@ class dvd extends product
 
             if ($this->validateNumber($this->price) && $this->validateNumber($this->attribute)) {
                 if ($this->newListing(self::TYPE)) {
-                    echo "DVD successfully saved!<br>
-					<a href='../productAdd/index.html'>new</a><br>
-                    <a href='../productList/index.php'>list</a>";
+                    echo "DVD successfully saved!";
                 }
             } else {
                 echo "Invalid input!";

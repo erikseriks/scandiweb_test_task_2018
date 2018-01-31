@@ -68,20 +68,18 @@ abstract class product extends dbConnect
         $statement->execute();
         $statement->bind_result($result);
         $statement->fetch();
-        //print($result)."<br>";
+        
         if ($result != $this->sku) {
             $statement->close();
             $sql = "INSERT INTO product (sku,name,price,type,attribute) VALUES (?,?,?,?,?)";
             $statement = $mysqli->prepare($sql);
             $statement->bind_param("ssdis", $this->sku, $this->name, $this->price, $type, $this->attribute);
             if (!$statement->execute()) {
-                //echo("Error description: " . mysqli_error($mysqli));
                 return false;
             } else {
                 return true;
             }
         } else {
-            //echo("Error description: " . mysqli_error($mysqli));
             echo "SKU allready exists!";
             die();
         }

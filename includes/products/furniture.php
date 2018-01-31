@@ -24,9 +24,7 @@ class furniture extends product
             if (preg_match(self::ATTRIBUTE_REGEX, $this->attribute) && $this->validateNumber($this->price)) {
                 //Save this item in database.
                 if ($this->newListing(self::TYPE)) {
-                    echo "Furniture successfully saved!<br>
-                     <a href='../productAdd/index.html'>new</a><br>
-                    <a href='../productList/index.php'>list</a>";
+                    echo "Furniture successfully saved!";
                 }
             } else {
                 echo "Invalid input!";

@@ -12,6 +12,7 @@ if (isset($_POST["sku"], $_POST["name"], $_POST["price"], $_POST["type"])) {
         //Appropriate object is instantiated according to type and then saved to database.
         $product = productFactory::createProduct($type);
         $product->save();
+        die();
     }
 }
 
@@ -21,6 +22,8 @@ if (isset($_POST["deleteSku"])) {
     //Delete all selected items.
     $massDelete = new massDelete;
     $massDelete->delete($_POST["deleteSku"]);
+    header("Location: ../productList/index.php");
+    die();
 }
 
 //If no statements are true, return to main page.

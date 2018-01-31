@@ -28,9 +28,10 @@ class listProducts extends getProducts
                 }
                 //Generate a complete div of product including the checkbox.
                 echo"<div class='product'>
-							<div class='checkbox'>
-							<input type='checkbox' name='deleteSku[]' value=".htmlentities($row['sku'], ENT_QUOTES, "UTF-8").">
-							</div>
+							
+						<input class='checkbox' type='checkbox' name='deleteSku[]' value=".htmlentities($row['sku'], ENT_QUOTES, "UTF-8").">
+                        <br>
+							
 						".htmlentities($row['sku'], ENT_QUOTES, "UTF-8")."<br>
 						".htmlentities($row['name'], ENT_QUOTES, "UTF-8")."<br>
 						".htmlentities($row['price'], ENT_QUOTES, "UTF-8")." $<br>

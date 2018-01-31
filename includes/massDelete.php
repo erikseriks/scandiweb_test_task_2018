@@ -30,7 +30,6 @@ class massDelete extends dbConnect
             $sql = "DELETE FROM product WHERE sku IN ('".$skus."') LIMIT $limit";
             //Execute query.
             if (!$mysqli->query($sql)) {
-                //echo("Error description: " .mysqli_error($mysqli));
                 return false;
             } else {
                 return true;
