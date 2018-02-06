@@ -30,13 +30,16 @@ class listProducts extends getProducts
                 echo"<div class='product'>
 							
 						<input class='checkbox' type='checkbox' name='deleteSku[]' value=".htmlentities($row['sku'], ENT_QUOTES, "UTF-8").">
+                        <div>
                         <br>
 							
 						".htmlentities($row['sku'], ENT_QUOTES, "UTF-8")."<br>
 						".htmlentities($row['name'], ENT_QUOTES, "UTF-8")."<br>
 						".htmlentities($row['price'], ENT_QUOTES, "UTF-8")." $<br>
 						".$attributeName, htmlentities($row['attribute'], ENT_QUOTES, "UTF-8"), $units."
-					</div>";
+                        <br>
+					</div>
+                    </div>";
             }
         } else {
             echo "There are no products!";

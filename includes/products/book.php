@@ -12,17 +12,21 @@ class book extends product
     public function save()
     {
         //Validate input and save to database.
-        if (isset($_POST["weight"])) {
-            $this->attribute = trim(strip_tags($_POST["weight"]));
+        if (isset($_POST["weight"]) && !empty(trim($_POST["weight"]))) {
+            $this->attribute = strip_tags(trim($_POST["weight"]));
             
-            if ($this->validateNumber($this->price) && $this->validateNumber($this->attribute)) {
-                if ($this->newListing(self::TYPE)) {
-                    echo "Book successfully saved!";
-                }
-            } else {
-                echo "Invalid input!";
+            try {
+                $this->validateNumber($this->price);
+                $this->validateNumber($this->attribute);
+                $this->newListing(self::TYPE);
+            } catch (Exception $e) {
+                echo $e->getMessage();
                 die();
             }
+
+            echo "Book successfully saved!";    
+        } else {
+            echo "Please provide attribute!";
         }
     }
 }

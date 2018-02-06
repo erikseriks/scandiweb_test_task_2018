@@ -4,7 +4,12 @@ $(document).ready(function(){
 		event.preventDefault();
 		$.post("../includes/actionPage.php", $("#productAddForm").serialize())
 		.done(function(data) {
-    		alert(data);
+    		$("#message").text(data);
   		});
 	})
+
+	//Remove message when editing input.
+	$("form").on('input',function(e){
+    	$("#message").empty();
+	});
 });

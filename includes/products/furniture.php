@@ -16,20 +16,34 @@ class furniture extends product
     {
         //Convert and validate special attribute, then save to database.
         if (isset($_POST["height"], $_POST["width"], $_POST["length"])) {
-            //Format special attribute.
-            $this->attribute = trim(strip_tags($_POST["height"]))."x"
-                              .trim(strip_tags($_POST["width"]))."x"
-                              .trim(strip_tags($_POST["length"]));
-            //Validate data before saving.
-            if (preg_match(self::ATTRIBUTE_REGEX, $this->attribute) && $this->validateNumber($this->price)) {
-                //Save this item in database.
-                if ($this->newListing(self::TYPE)) {
+            //Remove whitespace and tags.
+            $h = strip_tags(trim($_POST["height"]));
+            $w = strip_tags(trim($_POST["width"]));
+            $l = strip_tags(trim($_POST["length"]));
+
+            if (!empty($h) && !empty($w) && !empty($l)) {
+                //Format special attribute.
+                $this->attribute = $h."x".$w."x".$l;
+                
+                //Validate data before saving.
+                if (preg_match(self::ATTRIBUTE_REGEX, $this->attribute)) {
+                    
+                    try {
+                        $this->validateNumber($this->price);
+                        //Save this item in database.
+                        $this->newListing(self::TYPE);
+                    } catch (Exception $e) {
+                        echo $e->getMessage();
+                        die();
+                    }
+
                     echo "Furniture successfully saved!";
+                } else {
+                    echo "Invalid attribute!";
                 }
             } else {
-                echo "Invalid input!";
-                die();
+                echo "Please provide attribute!";
             }
-        }
+        }        
     }
 }

@@ -6,12 +6,10 @@ include("encoding.php");
 
 //If data from "new product" form is recieved, then create and save the product.
 if (isset($_POST["sku"], $_POST["name"], $_POST["price"], $_POST["type"])) {
-    $type = trim($_POST["type"]);
-    if (!empty($type)) {
+    if (!empty($_POST["type"])) {
         include_once("productFactory.php");
         //Appropriate object is instantiated according to type and then saved to database.
-        $product = productFactory::createProduct($type);
-        $product->save();
+        $factory = new factory\productFactory('save', $_POST["type"]);
         die();
     }
 }
@@ -20,8 +18,8 @@ if (isset($_POST["sku"], $_POST["name"], $_POST["price"], $_POST["type"])) {
 if (isset($_POST["deleteSku"])) {
     include_once("massDelete.php");
     //Delete all selected items.
-    $massDelete = new massDelete;
-    $massDelete->delete($_POST["deleteSku"]);
+    $massDelete = new massDelete($_POST["deleteSku"]);
+    //Return to "Product List" page.
     header("Location: ../productList/index.php");
     die();
 }

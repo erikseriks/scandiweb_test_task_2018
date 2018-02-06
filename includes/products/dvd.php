@@ -12,17 +12,21 @@ class dvd extends product
     public function save()
     {
         //Validate input and save to database.
-        if (isset($_POST["size"])) {
-            $this->attribute = trim(strip_tags($_POST["size"]));
-
-            if ($this->validateNumber($this->price) && $this->validateNumber($this->attribute)) {
-                if ($this->newListing(self::TYPE)) {
-                    echo "DVD successfully saved!";
-                }
-            } else {
-                echo "Invalid input!";
+        if (isset($_POST["size"]) && !empty(trim($_POST["size"]))) {
+            $this->attribute = strip_tags(trim($_POST["size"]));
+            
+            try {
+                $this->validateNumber($this->price);
+                $this->validateNumber($this->attribute);
+                $this->newListing(self::TYPE);
+            } catch (Exception $e) {
+                echo $e->getMessage();
                 die();
             }
+
+            echo "DVD successfully saved!";    
+        } else {
+            echo "Please provide attribute!";
         }
     }
 }
