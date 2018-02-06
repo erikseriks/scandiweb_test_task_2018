@@ -24,16 +24,19 @@
   </div>
 </div>
 <br>
-<!--Main/middle content area-->
-<div id="content">
+<!--Main/middle centered content area-->
+<div class="center">
 	<!-- All the product div`s goes here. -->
-		<?php
-        include("../includes/listProducts.php");
-        $list = new listProducts();
-        $list->list();
-    ?>
-	</div>
+  <?php
+      include("../includes/listProducts.php");
+      $list = new listProducts();
+      $list->list();
+  ?>
+</div><!--End of center-->
 </form>
+
+<div id="footer">
+</div>
 
 </body>
 </html>

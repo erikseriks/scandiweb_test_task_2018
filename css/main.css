@@ -57,23 +57,24 @@ input[type="text"]{
 	border-bottom: 2px solid black;
 }
 
-#content{
-	clear: both;
-	padding-left: 20px;
-	padding-right: 40px;
-	text-align: center;
-}
-
 #form{
 	display: inline-block;
 	text-align: left;
+	margin-right: 10%;
 }
 
 #message{
 	text-align: center;
-	font-size: 18px;
-	padding-top: 15px;
-	height: 35px;
+    font-size: 18px;
+    padding-top: 15px;
+    margin-right: 10%;
+    height: 35px;
+    clear: both;
+}
+
+#footer{
+	height: 100px;
+	clear: both;
 }
 
 .left{
@@ -89,11 +90,18 @@ input[type="text"]{
 	width: 200px;
 }
 
+.center{
+	width: 85%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
 .product{
-	display: inline-block;
 	float: left;
-	width: 260px;
-	min-height: 200px;
+	width: 300px;
+	height: 210px;
 	margin-left: 25px;
 	margin-top: 30px;
 	border: 2px solid lightgray;
