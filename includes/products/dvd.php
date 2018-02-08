@@ -24,7 +24,7 @@ class dvd extends product
                 die();
             }
 
-            echo "DVD successfully saved!";    
+            echo "DVD successfully saved!";
         } else {
             echo "Please provide attribute!";
         }

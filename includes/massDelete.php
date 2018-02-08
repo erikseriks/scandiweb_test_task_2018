@@ -7,7 +7,6 @@ require_once("dbConnect.php");
 //Class for deleting selected products from database.
 class massDelete extends dbConnect
 {
-    
     public function __construct($array)
     {
         //Check if any products where selected.
@@ -16,7 +15,7 @@ class massDelete extends dbConnect
         } else {
             echo "Please select atleast one product!";
             die();
-        }    
+        }
     }
 
     private function delete($input)

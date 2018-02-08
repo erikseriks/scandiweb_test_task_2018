@@ -24,7 +24,7 @@ class book extends product
                 die();
             }
 
-            echo "Book successfully saved!";    
+            echo "Book successfully saved!";
         } else {
             echo "Please provide attribute!";
         }

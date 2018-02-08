@@ -9,7 +9,7 @@ if (isset($_POST["sku"], $_POST["name"], $_POST["price"], $_POST["type"])) {
     if (!empty($_POST["type"])) {
         include_once("productFactory.php");
         //Appropriate object is instantiated according to type and then saved to database.
-        $factory = new factory\productFactory('save', $_POST["type"]);
+        factory\productFactory::newProduct($_POST["type"]);
         die();
     }
 }

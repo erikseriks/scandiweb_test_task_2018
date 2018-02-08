@@ -27,7 +27,6 @@ class furniture extends product
                 
                 //Validate data before saving.
                 if (preg_match(self::ATTRIBUTE_REGEX, $this->attribute)) {
-                    
                     try {
                         $this->validateNumber($this->price);
                         //Save this item in database.
@@ -44,6 +43,6 @@ class furniture extends product
             } else {
                 echo "Please provide attribute!";
             }
-        }        
+        }
     }
 }
