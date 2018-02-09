@@ -13,7 +13,7 @@ class dvd extends product
     {
         //Validate input and save to database.
         if (isset($_POST["size"]) && !empty(trim($_POST["size"]))) {
-            $this->attribute = strip_tags(trim($_POST["size"]));
+            $this->attribute = trim(strip_tags($_POST["size"]));
             
             try {
                 $this->validateNumber($this->price);

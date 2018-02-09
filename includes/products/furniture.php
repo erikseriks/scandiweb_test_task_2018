@@ -17,9 +17,9 @@ class furniture extends product
         //Convert and validate special attribute, then save to database.
         if (isset($_POST["height"], $_POST["width"], $_POST["length"])) {
             //Remove whitespace and tags.
-            $h = strip_tags(trim($_POST["height"]));
-            $w = strip_tags(trim($_POST["width"]));
-            $l = strip_tags(trim($_POST["length"]));
+            $h = trim(strip_tags($_POST["height"]));
+            $w = trim(strip_tags($_POST["width"]));
+            $l = trim(strip_tags($_POST["length"]));
 
             if (!empty($h) && !empty($w) && !empty($l)) {
                 //Format special attribute.

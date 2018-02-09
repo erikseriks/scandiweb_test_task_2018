@@ -13,7 +13,7 @@ class book extends product
     {
         //Validate input and save to database.
         if (isset($_POST["weight"]) && !empty(trim($_POST["weight"]))) {
-            $this->attribute = strip_tags(trim($_POST["weight"]));
+            $this->attribute = trim(strip_tags($_POST["weight"]));
             
             try {
                 $this->validateNumber($this->price);

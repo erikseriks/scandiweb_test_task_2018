@@ -53,8 +53,8 @@ abstract class product extends dbConnect
         if (is_numeric($input) && $input > 0 && mb_strlen(mb_substr(mb_strrchr($input, "."), 1)) < 3) {
             return true;
         } else {
-            throw new exception("Invalid number!");
             return false;
+            throw new exception("Invalid number!");
         }
     }
 
@@ -76,8 +76,10 @@ abstract class product extends dbConnect
             $statement = $mysqli->prepare($sql);
             $statement->bind_param("ssdis", $this->sku, $this->name, $this->price, $type, $this->attribute);
             if (!$statement->execute()) {
-                throw new exception("Failed to save the product!");
                 return false;
+                $statement->close();
+                $mysqli->close();
+                throw new exception("Failed to save the product!");
             } else {
                 return true;
             }
