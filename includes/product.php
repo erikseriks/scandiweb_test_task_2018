@@ -50,10 +50,7 @@ abstract class product extends dbConnect
     {
         //Only positive numbers with no more than two numbers after decimal point ar valid.
         $input = str_replace(",", ".", (string)$input);
-        if (is_numeric($input) && $input > 0 && mb_strlen(mb_substr(mb_strrchr($input, "."), 1)) < 3) {
-            return true;
-        } else {
-            return false;
+        if (!(is_numeric($input) && $input > 0 && mb_strlen(mb_substr(mb_strrchr($input, "."), 1)) < 3)) {
             throw new exception("Invalid number!");
         }
     }
@@ -76,17 +73,14 @@ abstract class product extends dbConnect
             $statement = $mysqli->prepare($sql);
             $statement->bind_param("ssdis", $this->sku, $this->name, $this->price, $type, $this->attribute);
             if (!$statement->execute()) {
-                return false;
                 $statement->close();
                 $mysqli->close();
                 throw new exception("Failed to save the product!");
-            } else {
-                return true;
             }
         } else {
+            $statement->close();
+            $mysqli->close();
             throw new exception("SKU allready exists!");
         }
-        $statement->close();
-        $mysqli->close();
     }
 }
