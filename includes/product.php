@@ -32,13 +32,13 @@ abstract class product extends dbConnect
     protected function prepareSku(&$sku)
     {
         //Strips tags, removes spaces from beginning and end, converts to uppercase.
-        $sku = mb_strtoupper(trim(strip_tags($sku)));
+        $sku = mb_strtoupper(strip_tags($sku));
         //Filter invalid chars.
         $sku = preg_replace('/[^A-Z0-9\-]/', '', $sku);
         //Remove extra hyphens.
         $sku = preg_replace('/--+/', '-', $sku);
         //Remove all leading, trailing and standalone hyphens.
-        $sku = preg_replace('/(?<!\S)-|-(?!\S)/', '', $sku);
+        $sku = preg_replace('/(?<!\w)-|-(?!\w)/', '', $sku);
         return $sku;
     }
 
@@ -82,5 +82,7 @@ abstract class product extends dbConnect
             $mysqli->close();
             throw new exception("SKU allready exists!");
         }
+        $statement->close();
+        $mysqli->close();
     }
 }

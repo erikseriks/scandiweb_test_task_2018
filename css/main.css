@@ -124,6 +124,6 @@ input[type=checkbox]:checked ~ div{
 	cursor: pointer;
 }
 
-.hidden{
+.attributes{
 	display:none;
 }
